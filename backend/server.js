@@ -1,8 +1,13 @@
 const express = require("express");
 const dotenv = require("dotenv").config();
+const colors = require("colors");
 const { errorHandler } = require("./middleware/errorMiddleWare");
+const connectDB = require("./config/db");
 const port = process.env.PORT;
 const app = express();
+
+// connecting database with mongoDB
+connectDB();
 
 // adding middleware for get/check req body data
 // it handle converstion
